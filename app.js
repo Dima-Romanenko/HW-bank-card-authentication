@@ -11,7 +11,9 @@ let processData = (data) => {
     }
   });
 
-  if (dataArray.length === 16) return dataArray.reverse();
+  if (dataArray.length === 16) {
+    return dataArray.reverse();
+  }
 };
 // Алгоритм луна для проверки коректности номера
 let checkNumberWithLune = (data) => {
@@ -70,7 +72,7 @@ let compareCardInn = (code) => {
 
   if (
     (innWithTwoNum >= 51 && innWithTwoNum <= 55) ||
-    (innWithSixNum > 222100 && innWithSixNum < 272099)
+    (innWithSixNum >= 222100 && innWithSixNum <= 272099)
   ) {
     return "MasterCard";
   } else if (+code[0] == 4) {
